@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>todo</title>
+	<style>
+		html,
+		body,
+		.main,
+		.header,
+		.demo,
+		.demo iframe {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			border-collapse: collapse;
+		}
+		.demo iframe {
+			display: block;
+		}
+		.header {
+			height: 0;
+		}
+		.h-spacer {
+			float: left;
+			width: 0;
+			height: 100px;
+			/* min-height is ignored if height is set */
+		}
+		label {
+			border-bottom: dashed 1px;
+			cursor: pointer;
+		}
+		#details-toggle {
+			display: none;
+		}
+		.intro,
+		.details {
+			padding: 0 2em;
+			overflow: hidden;
+		}
+		.intro {
+			background: #BBB;
+		}
+		.details {
+			background: #CCC;
+		}
+		#details-toggle:not(:checked) + .details {
+			display: none;
+		}
+		body {
+			font-family: sans-serif;
+		}
+		h1,
+		p {
+			margin: 0.5em 0;
+		}
+	</style>
+</head>
+<body>
+	<table class="main">
+		<!-- Yep. The good ol' bulletproof table -->
+		<tr>
+			<td class="header">
+				<div class="intro">
+					<p>A simple ToDo list in <em>293</em> bytes. <label for="details-toggle">Details</label></p>
+				</div>
+				<!-- JavaScript coders wring JavaScript is too dull. How about no JS at all on this page? -->
+				<input id="details-toggle" type="checkbox">
+				<div class="details">
+					<p>Type anything you want. <code>[ ]</code> and <code>[x]</code> are considered checkmarks, they can be toggled by clicking (right in the text field, try it!). Changes are automatically stored in localStorage.</p>
+					<p>GitHub repo: <a href="https://github.com/codegolf/todo">https://github.com/codegolf/todo</a></p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="demo">
+				<div class="h-spacer"></div>
+				<iframe src="golf.html" frameborder="0"></iframe>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
